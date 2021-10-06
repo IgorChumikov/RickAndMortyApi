@@ -18,4 +18,14 @@ struct Result: Decodable {
     let species: String
     let gender: String
     let image: String
+    
+    var description: String {
+        """
+    Number: \(id)
+    Name: \(name)
+    Status: \(status)
+    Species: \(species)
+    Gender: \(gender)
+    """
+    }
 }

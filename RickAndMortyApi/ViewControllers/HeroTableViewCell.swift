@@ -24,9 +24,9 @@ class HeroTableViewCell: UITableViewCell {
     // MARK: - Public methods
     func configure(with results: Result?) {
         
-        heroName.text = "Name: \(results?.name ?? "")"
+        heroName.text = "\(results?.name ?? "")"
         alive(status: results?.status)
-        heroSpecies.text = "Species: \(results?.species ?? "")"
+        heroSpecies.text = "\(results?.species ?? "")"
         
         DispatchQueue.global().async {
             guard let stringUrl = results?.image else { return }
@@ -40,10 +40,10 @@ class HeroTableViewCell: UITableViewCell {
     func alive(status: String?) {
         if status == "Alive" {
             heroStatus.shadowColor = .green
-            heroStatus.text = "Status: \(status ?? "")"
+            heroStatus.text = "\(status ?? "")"
         } else {
             heroStatus.shadowColor = .red
-            heroStatus.text = "Status: \(status ?? "")"
+            heroStatus.text = "\(status ?? "")"
         }
     }
 }

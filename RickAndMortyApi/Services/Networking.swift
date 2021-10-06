@@ -26,7 +26,6 @@ class NetworkManager {
             }
             do {
                 let result = try! JSONDecoder().decode(Character.self, from: data)
-                print(result)
                 
                 DispatchQueue.main.async {
                     completion(result)
